@@ -9,7 +9,7 @@
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(12, 123, 110, 0.7),rgba(12,123,110,0.7)),url(main/San\ Francisco7.jpg);
+    background-image: linear-gradient(rgba(12, 123, 110, 0.7),rgba(12,123,110,0.7)),url(steamandhotwater/San\ Francisco7.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
