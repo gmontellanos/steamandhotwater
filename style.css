@@ -21,8 +21,8 @@ nav{
     align-items: center;
 }
 nav img{
-    padding: 5%;
-    width: 400px;
+    padding: 3%;
+    width: 90%;
 }
 .nav-links{
     flex: 1;
