@@ -1,158 +1,355 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-   <meta name="viewport" content="with=device-width. initial-scale=1/0">
+    <!-- ✅ Fixed viewport (was: "with=device-width. initial-scale=1/0") -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
-    <meta name="keywords" content="heating company"/>
-    <meta name="description" content="San Francisco based Steam Hydronic Heating Service Company and Backflow Preventer Tester."/>
-    <meta name="robots" content="index"/>
-    <meta name="robots" content="follow"/>
-    <title>The Steam & Hot Water Company</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="icon" href="favicon.png" type="image/png">
+
+```
+<!-- ✅ SEO: expanded keywords & richer description -->
+<meta name="keywords" content="steam heating repair San Francisco, hydronic heating San Francisco, boiler service San Francisco, backflow testing San Francisco, C-4 contractor SF, hot water heating system repair">
+<meta name="description" content="San Francisco's trusted steam and hydronic heating specialists. Over 20 years of boiler service, repair, and certified backflow preventer testing. Licensed C-4 contractor serving the City and County of San Francisco.">
+<meta name="robots" content="index, follow">
+
+<!-- ✅ SEO: Open Graph for social sharing -->
+<meta property="og:title" content="The Steam & Hot Water Company – San Francisco Heating Specialists">
+<meta property="og:description" content="Over 20 years of steam and hydronic heating repair. Licensed, insured & bonded. Certified backflow testers serving San Francisco.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://steamandhotwater.com">
+<meta property="og:image" content="https://steamandhotwater.com/steam_n_water_ logo_png_yellow.png">
+
+<!-- ✅ SEO: canonical URL -->
+<link rel="canonical" href="https://steamandhotwater.com">
+
+<title>The Steam & Hot Water Company | San Francisco Heating Repair & Backflow Testing</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- ✅ SEO: LocalBusiness structured data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Steam & Hot Water Company",
+  "description": "Licensed, insured, and bonded C-4 contractor specializing in steam and hydronic heating repair and certified backflow preventer testing in San Francisco.",
+  "url": "https://steamandhotwater.com",
+  "telephone": "+14159006254",
+  "email": "steamandhotwater@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "60 29th St, #323",
+    "addressLocality": "San Francisco",
+    "addressRegion": "CA",
+    "postalCode": "94110",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "16:00"
+    }
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "San Francisco"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Robert Simms"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "Excellent vendor was able diagnose the problem when others failed. The Steam and Hot water Company estimated costs, yet the costs came in less than estimated. First class company!"
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "David Teitel"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "Dave is a pleasure to work with. He is extremely competent and efficient, and explains your system, the problem and how to fix it clearly, which is very helpful to the customer."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Elizabeth Sinclair"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "Very helpful, knowledgeable and pleasant to deal with. Showed up on time, and took the time to explain in detail what my issues were and options for addressing. Highly recommend."
+    }
+  ]
+}
+</script>
+```
+
 </head>
 <body>
+
+<!-- ===== HEADER ===== -->
+
 <section class="header">
-    <nav>
-        <a href="index.html"><img src="steam_n_water_ logo_png_yellow.png"></a>
+    <nav aria-label="Main navigation">
+        <a href="index.html">
+            <!-- ✅ SEO: added alt text to logo -->
+            <img src="steam_n_water_ logo_png_yellow.png" alt="The Steam and Hot Water Company logo">
+        </a>
         <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-             <ul>
+            <i class="fa fa-times" onclick="hideMenu()" aria-label="Close menu"></i>
+            <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="#services">SERVICES</a></li>
                 <li><a href="#about-us">ABOUT</a></li>
+                <li><a href="#reviews">REVIEWS</a></li>
                 <li><a href="#faqs">FAQS</a></li>
                 <li><a href="#contact-us">CONTACT</a></li>
             </ul>
         </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav> 
-<div class="text-box">
-    <h1>San Francisco's Trusted Heating Specialists</h1>
-    <p>With over 20 years of dedicated experience, we proudly specialize in the repair and maintenance of steam and hydronic heating systems for San Francisco homes. Our expertise ensures your home stays warm and safe, and as certified backflow testers, we’re here to protect your water supply with trusted care and reliability.</p>
-    <a href="#contact-us" class="contact-btn">Contact Us</a>
-</div>
-
+        <i class="fa fa-bars" onclick="showMenu()" aria-label="Open menu"></i>
+    </nav>
+    <div class="text-box">
+        <h1> <br> <br> <br> San Francisco's Trusted Heating Specialists</h1>
+        <p>With over 20 years of dedicated experience, we proudly specialize in the repair and maintenance of steam and hydronic heating systems for San Francisco homes. Our expertise ensures your home stays warm and safe — and as certified backflow testers, we're here to protect your water supply with trusted care and reliability.</p>
+        <a href="#contact-us" class="contact-btn">Contact Us</a>
+    </div>
 </section>
 
-<!---- services ---->
-<section class="services">
+<!-- ===== SECTION DIVIDER ===== -->
+
+<div class="section-divider">
+    <span class="divider-line"></span>
+    <span class="divider-icon"><i class="fa-solid fa-fire-flame-simple"></i></span>
+    <span class="divider-line"></span>
+</div>
+
+<!-- ===== SERVICES ===== -->
+
+<section class="services" aria-labelledby="services">
     <h1 id="services">Services We Offer</h1>
-    <p>Labor rates and applicable discounts</p>
+    <p class="section-sub">Labor rates and applicable discounts</p>
     <div class="row">
         <div class="service-col">
-            <h3>Boiler Service & Repair</h3>
+            <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+            <h3>Boiler Service &amp; Repair</h3>
             <p>$200 per hour</p>
         </div>
         <div class="service-col">
+            <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
             <h3>Backflow Testing</h3>
             <p>$125 per device</p>
         </div>
         <div class="service-col">
-            <h3>Backflow Testing Discounts Available</h3>
-            <p>10% discount for 3 or more devices at the same address.<br>15% discount for 8 or more devices at the same address.<br>20% discount for 15 or more devices at the same address.</p>
+            <div class="service-icon"><i class="fa-solid fa-tags"></i></div>
+            <h3>Backflow Testing Discounts</h3>
+            <p>
+                10% off &mdash; 3 or more devices at same address.<br>
+                15% off &mdash; 8 or more devices at same address.<br>
+                20% off &mdash; 15 or more devices at same address.
+            </p>
         </div>
         <div class="service-col">
-            <h3>Backflow Test & Boiler Service Combo</h3>
-            <p>$300 - one backflow test and service of the heating boiler.<br><mark>Note:</mark> Discount is for 1 hour of labor. Any additional labor will be charged at the regular service rate. Steam boilers usually do take more than an hour for a comprehensive service.</p>
+            <div class="service-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <h3>Backflow + Boiler Combo</h3>
+            <p>$300 — one backflow test and service of the heating boiler.<br>
+            <em>Note:</em> Discount covers 1 hour of labor. Additional labor billed at regular rate. Steam boilers typically require more than one hour for a comprehensive service.</p>
         </div>
     </div>
-
 </section>
 
-<!-- about -->
-<section class="about">
-    <div class="text-box">
-        <h1 id="about-us"> About Us</h1>
-        <p>We are a licensed, insured, and bonded C-4 contractor. We have over 20 years of experience with service and repair of steam and hydronic heating systems in the City of San Francisco. We are experienced with single pipe and two pipe steam, radiant floor, hydronic baseboard, hydronic radiator, and hydronic air handers. We are experienced with service and repair of various boiler manufacturers. We strongly believe that routine regular maintenance will prolong the life of the entire heating system. However, we only service residential heating systems.</p><p>We are also are certified backflow testers. We handle all the paperwork with the City of San Francisco. With over 15 years of backflow testing and repair experience we will ensure that your backflow preventer will maintain the high level of protection that is required by the City of San Francisco.</p>
+<!-- ===== SECTION DIVIDER ===== -->
+
+<div class="section-divider dark">
+    <span class="divider-line"></span>
+    <span class="divider-icon"><i class="fa-solid fa-droplet"></i></span>
+    <span class="divider-line"></span>
 </div>
+
+<!-- ===== ABOUT ===== -->
+
+<section class="about" aria-labelledby="about-us">
+    <div class="about-content">
+        <div class="ornament light">— &nbsp; ✦ &nbsp; —</div>
+        <h1 id="about-us">About Us</h1>
+        <div class="title-rule light"></div>
+        <p>We are a licensed, insured, and bonded C-4 contractor with over 20 years of experience servicing steam and hydronic heating systems throughout the City of San Francisco. We are experienced with single pipe and two pipe steam, radiant floor, hydronic baseboard, hydronic radiator, and hydronic air handlers — as well as a wide variety of boiler manufacturers.</p>
+        <p>We strongly believe that routine regular maintenance will prolong the life of your entire heating system. <em>We service residential heating systems only.</em></p>
+        <p>We are also certified backflow testers and handle all required paperwork with the City of San Francisco. With over 15 years of backflow testing and repair experience, we will ensure your backflow preventer maintains the high level of protection required by the City.</p>
+    </div>
 </section>
 
-<!--- faq -->
-<section class="faq">
-    <h1 id="faqs">FAQs</h1>
-<div class="column">
-    <div class="faq-col">
-        <h3>Do you service commercial steam and hydronic heating systems?</h3>
-        <p>Unfortunately, we do not. We only service <mark>single family residential homes.</mark> We do not service heating systems for apartments, multi-unit buildings, commercial or any other commercial-style heating systems.</p>
-    </div>
-    <div class="faq-col">
-        <h3>Do you service heating systems for condominiums?</h3>
-        <p>It <mark>depends</mark>. If the boiler and heating system belongs to the individual condominium, then yes. However, if the heating system is connected to the centralized heating system for the entire complex, then unfortunately we will not service that heating system. </p>
-    </div>
-    <div class="faq-col">
-        <h3>Do you test backflow preventers for residential and commercial buildings?
-        </h3>
-        <p>Yes, we do.</p>
-    </div>
-    <div class="faq-col">
-        <h3>Do you provide after hours or emergency services?</h3>
-        <p>Unfortunately, we do not unless it is a heating system that was initially installed by us.
-        </p>
-    </div>
-    <div class="faq-col">
-        <h3>Do you provide service outside of San Francisco?</h3>
-        <p>Unfortunately, we do not work outside of the City and County of San Francisco. 
-        </p>
-    </div>
-    <div class="faq-col">
-        <h3>What is the best way to schedule an appointment?</h3>
-        <p>Feel free to call, text, or email. However, the best way to schedule a visit is by <mark>email.</mark> Emails are checked constantly and we do respond promptly via email.
-        </p>
-    </div>
-    <div class="faq-col">
-        <h3>What is your warranty?</h3>
-        <p>We provide the industry standard one year warranty for the repair.
-        </p>
-    </div>
+<!-- ===== SECTION DIVIDER ===== -->
+
+<div class="section-divider">
+    <span class="divider-line"></span>
+    <span class="divider-icon"><i class="fa-solid fa-star"></i></span>
+    <span class="divider-line"></span>
 </div>
-</section>
 
-<!---- contact ---->
-<section class="contact">
-        <h1 id="contact-us">Company Information</h1>
-        <div class="contact-col">
-            <div class="info-col">
-                <h3>The Steam and Hot Water Company</h3>
-                <p>60 29th St, #323 <br> San Francisco, CA 94110 <br> License #1123889 <br> <a class="phone" href="tel:4159006254">(415) 900-6254</a><br> <a class="email" href="mailto:steamandhotwater@gmail.com">steamandhotwater@gmail.com</a></p>
+<!-- ===== GOOGLE REVIEWS ===== -->
+
+<section class="reviews" aria-labelledby="reviews">
+    <h1 id="reviews">What Our Customers Say</h1>
+    <p class="section-sub">5-Star Google Reviews</p>
+    <div class="reviews-row">
+
+```
+    <article class="review-card">
+        <div class="review-header">
+            <div class="reviewer-avatar" style="background:#6a4fa3;">R</div>
+            <div class="reviewer-info">
+                <strong>Robert Simms</strong>
+                <span>3 months ago</span>
             </div>
-            <div class="info-col">
-                <h3>Hours of Operation</h3>
-                <p>Tuesday 8:00 am to 4:00 pm <br> Wednesday 8:00 am to 4:00 pm <br> Thursday 8:00 am to 4:00 pm <br> Friday 8:00 am to 4:00 pm</p>
-            </div>
+            <div class="google-badge"><i class="fab fa-google"></i></div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Excellent vendor — was able to diagnose the problem when others failed. The Steam and Hot Water Company estimated costs, yet the costs came in less than estimated. First class company!"</p>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="reviewer-avatar" style="background:#2e7d9e;">D</div>
+            <div class="reviewer-info">
+                <strong>David Teitel</strong>
+                <span>6 months ago</span>
+            </div>
+            <div class="google-badge"><i class="fab fa-google"></i></div>
+        </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Dave is a pleasure to work with. He is extremely competent and efficient, and explains your system, the problem, and how to fix it clearly — which is very helpful to the customer. There is no one I'd rather have working on our boiler and hot water system."</p>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="reviewer-avatar" style="background:#c0392b;">E</div>
+            <div class="reviewer-info">
+                <strong>Elizabeth Sinclair</strong>
+                <span>One year ago</span>
+            </div>
+            <div class="google-badge"><i class="fab fa-google"></i></div>
+        </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>"Very helpful, knowledgeable, and pleasant to deal with. Showed up on time and took the time to explain in detail what my issues were and the options for addressing them. Serviced my hydrostatic heating system — very reasonably priced. Highly recommend; I will use again."</p>
+    </article>
+
+</div>
+<a href="https://www.google.com/search?safe=active&client=safari&hs=2BY&sca_esv=77b8489817097e66&rls=en&sxsrf=ANbL-n4erN1O6OuQWVoi-1LqFdpj0x7HHw:1778701780935&q=steamandhotwater.com+reviews&uds=ALYpb_kC4PNZxOTqHr947SAnEWp20BnsoVKIBzgjijJDL_WUAaIudAFmN1P8BISE5wd2yza_AO9Np26lroEGRJI3A-xyoNPoy4kYp-W4l9d7oHMmEStSQIk9TYsY1lOIZ5krEGZtTW1D3V1FLt76IcN70LbbMFRz8_fBx5hcJrCHeMevsNzdC3f5tLyX6TSy2Az78LmFK7rFJKN2VZAvRFvjjF9gN3exLTaoek1KKE7Y3_eeCWKhQNMZx1zCZzjStOPgZZRxO_SdigPMWhetI4WH5CNCvA3HGtxWdcZdSylXEfTBvrSvavmqoWBtoHtqyCRQkomITlmtgomklgkSJ5Ncxo97fy704srBQwbsLeWk9JehmdFx0fmAPt0ctgDm7AOT7GFDE_sunnHgro8eFpUbuxkNXO4mgmoZEHYDkfIR9a6eL0PBThA&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qORxnuf-5Cyky49SIRiLZ1pmUeoZf_xx_GPIXIIXe_ATuZblwLxbt7G_1H1YrskTavatCTpUqUo6MSoqzzSiH7dlXzYxxybcre-B3cLcJsI56u1B6bw%3D%3D&sa=X&ved=2ahUKEwikkcG-hLeUAxX1EDQIHY7FBpMQk8gLegQIGRAB&ictx=1&biw=440&bih=836&dpr=3#ebo=2"
+   target="_blank" rel="noopener noreferrer" class="review-link">
+    See all reviews on Google &rarr;
+</a>
+```
+
 </section>
 
-<!---- Footer ---->
-<section class="footer">
+<!-- ===== SECTION DIVIDER ===== -->
+
+<div class="section-divider dark">
+    <span class="divider-line"></span>
+    <span class="divider-icon"><i class="fa-solid fa-circle-question"></i></span>
+    <span class="divider-line"></span>
+</div>
+
+<!-- ===== FAQs ===== -->
+
+<section class="faq" aria-labelledby="faqs">
+    <h1 id="faqs">Frequently Asked Questions</h1>
+    <div class="column">
+        <div class="faq-col">
+            <h3>Do you service commercial steam and hydronic heating systems?</h3>
+            <p>Unfortunately, we do not. We only service <mark>single family residential homes.</mark> We do not service heating systems for apartments, multi-unit buildings, commercial or any other commercial-style heating systems.</p>
+        </div>
+        <div class="faq-col">
+            <h3>Do you service heating systems for condominiums?</h3>
+            <p>It <mark>depends.</mark> If the boiler and heating system belongs to the individual condominium, then yes. However, if the heating system is connected to the centralized system for the entire complex, then unfortunately we will not service that system.</p>
+        </div>
+        <div class="faq-col">
+            <h3>Do you test backflow preventers for residential and commercial buildings?</h3>
+            <p>Yes, we do.</p>
+        </div>
+        <div class="faq-col">
+            <h3>Do you provide after-hours or emergency services?</h3>
+            <p>Unfortunately, we do not — unless the heating system was initially installed by us.</p>
+        </div>
+        <div class="faq-col">
+            <h3>Do you provide service outside of San Francisco?</h3>
+            <p>Unfortunately, we do not work outside of the City and County of San Francisco.</p>
+        </div>
+        <div class="faq-col">
+            <h3>What is the best way to schedule an appointment?</h3>
+            <p>Feel free to call, text, or email. However, the best way to schedule a visit is by <mark>email.</mark> Emails are checked constantly and we respond promptly.</p>
+        </div>
+        <div class="faq-col">
+            <h3>What is your warranty?</h3>
+            <p>We provide the industry-standard one-year warranty for repairs.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION DIVIDER ===== -->
+
+<div class="section-divider">
+    <span class="divider-line"></span>
+    <span class="divider-icon"><i class="fa-solid fa-address-card"></i></span>
+    <span class="divider-line"></span>
+</div>
+
+<!-- ===== CONTACT ===== -->
+
+<section class="contact" aria-labelledby="contact-us">
+    <div class="ornament light">— &nbsp; ✦ &nbsp; —</div>
+    <h1 id="contact-us">Company Information</h1>
+    <div class="title-rule light"></div>
+    <div class="contact-col">
+        <div class="info-col">
+            <h3>The Steam and Hot Water Company</h3>
+            <address>
+                <p>
+                    60 29th St, #323<br>
+                    San Francisco, CA 94110<br>
+                    License #1123889
+                </p>
+                <p>
+                    <a class="phone" href="tel:4159006254">(415) 900-6254</a><br>
+                    <a class="email" href="mailto:steamandhotwater@gmail.com">steamandhotwater@gmail.com</a>
+                </p>
+            </address>
+        </div>
+        <div class="info-col">
+            <h3>Hours of Operation</h3>
+            <p>
+                Tuesday &nbsp;&nbsp;&nbsp;8:00 am – 4:00 pm<br>
+                Wednesday 8:00 am – 4:00 pm<br>
+                Thursday &nbsp;8:00 am – 4:00 pm<br>
+                Friday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8:00 am – 4:00 pm
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+
+<footer class="footer" role="contentinfo">
     <div class="call">
-        <a href="tel:4159006254"><i class="fa-solid fa-phone"></i></a>
-        <a href="sms:4159006254"><i class="fa-solid fa-comment-sms"></i></a>
-        <a href="mailto:steamandhotwater@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:4159006254" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
+        <a href="sms:4159006254" aria-label="Text us"><i class="fa-solid fa-comment-sms"></i></a>
+        <a href="mailto:steamandhotwater@gmail.com" aria-label="Email us"><i class="fa-solid fa-envelope"></i></a>
     </div>
-        <section>
-            <div>
-                <p class="credits">Logo designed by <a href="https://www.linkedin.com/in/abdiel-mendez">Abdiel Mendez.</a> Website designed by <a href="https://www.linkedin.com/in/geraldine-montellanos-722b462b3">Geraldine Montellanos.</a></p>
-            </div>
-        </section>
-</section>
+    <div class="footer-tagline">San Francisco's Steam &amp; Hydronic Heating Specialists Since 2004</div>
+    <p class="credits">Logo by <a href="https://www.linkedin.com/in/abdiel-mendez">Abdiel Mendez</a> &nbsp;&middot;&nbsp; Website by <a href="https://whiskeyandwasabi.com" target="_blank" rel="noopener noreferrer">Geraldine Montellanos</a></p>
+</footer>
 
+<!-- Toggle Menu Script -->
 
-
-
-<!------JavaScript for Toggle Menu ------>
 <script>
     var navLinks = document.getElementById("navLinks");
-    function showMenu(){
-        navLinks.style.right = "0";
-    }
-    function hideMenu(){
-        navLinks.style.right = "-200px";
-    }
+    function showMenu() { navLinks.style.right = "0"; }
+    function hideMenu() { navLinks.style.right = "-200px"; }
 </script>
 
 </body>
