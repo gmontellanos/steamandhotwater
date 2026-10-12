@@ -10,5 +10,18 @@
 <body>
     <!-- Decap CMS: reads settings from admin/config.yml -->
     <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+
+    <!-- Hide the "Media" button in the editor's top bar (photo uploads are turned off) -->
+    <script>
+    (function () {
+        function hideMedia() {
+            document.querySelectorAll("header button, header a").forEach(function (el) {
+                if (el.textContent.trim() === "Media") el.style.display = "none";
+            });
+        }
+        new MutationObserver(hideMedia).observe(document.body, { childList: true, subtree: true });
+        hideMedia();
+    })();
+    </script>
 </body>
 </html>

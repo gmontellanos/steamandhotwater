@@ -1,13 +1,12 @@
 # =============================================
 # THE STEAM & HOT WATER COMPANY: WEBSITE EDITOR SETTINGS (Decap CMS)
-# Before going live, replace the line marked CHANGE ME with the Worker URL.
 # =============================================
 
 backend:
   name: github
   repo: gmontellanos/steamandhotwater
   branch: main
-  base_url: https://steamandhotwater-cms.montellanos01.workers.dev/ # CHANGE ME: Cloudflare Worker URL, no trailing slash
+  base_url: https://steamandhotwater-cms.montellanos01.workers.dev
   commit_messages:
     update: 'Website editor: update {{collection}} "{{slug}}"'
     uploadMedia: 'Website editor: upload "{{path}}"'
@@ -17,6 +16,7 @@ site_url: https://steamandhotwater.com
 display_url: https://steamandhotwater.com
 logo_url: https://steamandhotwater.com/favicon.png
 
+# Required by the editor even though photo uploads are turned off
 media_folder: images/uploads
 public_folder: /images/uploads
 
@@ -133,6 +133,3 @@ collections:
                   format: "YYYY-MM-DD", date_format: "MMMM D, YYYY", time_format: false, picker_utc: true }
               - { label: "Message", name: body, widget: text,
                   hint: "Leave a blank line between paragraphs." }
-              - { label: "Photo (optional)", name: image, widget: image, required: false, choose_url: false }
-              - { label: "Photo description (optional)", name: image_alt, widget: string, required: false,
-                  hint: "Describe the photo for screen readers, e.g. New boiler installed in a Noe Valley home" }
