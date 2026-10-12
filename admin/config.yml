@@ -7,7 +7,7 @@ backend:
   name: github
   repo: gmontellanos/steamandhotwater
   branch: main
-  base_url: https://steamandhotwater-cms-auth.YOUR-SUBDOMAIN.workers.dev  # CHANGE ME: Cloudflare Worker URL, no trailing slash
+  base_url: https://steamandhotwater-cms.montellanos01.workers.dev/ # CHANGE ME: Cloudflare Worker URL, no trailing slash
   commit_messages:
     update: 'Website editor: update {{collection}} "{{slug}}"'
     uploadMedia: 'Website editor: upload "{{path}}"'
