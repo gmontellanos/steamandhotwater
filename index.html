@@ -70,6 +70,14 @@
     </button>
 </nav>
 
+<!-- ===== CLOSURE NOTICE (content comes from content/notice.json) ===== -->
+<div class="closure-notice" id="closureNotice" role="status" hidden>
+    <div class="closure-inner">
+        <i class="fa-solid fa-calendar-xmark" aria-hidden="true"></i>
+        <p id="closureText"></p>
+    </div>
+</div>
+
 <!-- ===== HERO ===== -->
 
 <section class="header">
@@ -407,6 +415,44 @@
 <!-- ===== JAVASCRIPT ===== -->
 
 <script>
+/* ---- Closure Notice: reads content/notice.json (editable in the CMS) ---- */
+(async function () {
+    const notice = document.getElementById("closureNotice");
+    const text   = document.getElementById("closureText");
+    if (!notice || !text) return;
+
+    let n;
+    try {
+        const res = await fetch("content/notice.json", { cache: "no-store" });
+        if (!res.ok) return;
+        n = await res.json();
+    } catch (e) { return; }
+
+    // Today's date in San Francisco time, as YYYY-MM-DD
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles" }).format(new Date());
+
+    if (!n.enabled) return;
+    if (n.show_from && today < n.show_from) return;
+    if (n.hide_on && today >= n.hide_on) { notice.remove(); return; }
+
+    const isClosed = n.closed_from && today >= n.closed_from;
+    const label    = isClosed ? (n.label_during || n.label_before) : n.label_before;
+    const message  = isClosed ? (n.message_during || n.message_before) : n.message_before;
+    if (!message) return;
+
+    text.textContent = "";
+    if (label) {
+        const strong = document.createElement("strong");
+        strong.textContent = label + ":";
+        text.appendChild(strong);
+        text.appendChild(document.createTextNode(" "));
+    }
+    text.appendChild(document.createTextNode(message));
+
+    notice.hidden = false;
+    document.body.classList.add("has-notice");
+})();
+
 /* ---- Mobile Menu ---- */
 const navLinks = document.getElementById("navLinks");
 function showMenu() { navLinks.classList.add("open"); }
