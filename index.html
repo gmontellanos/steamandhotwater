@@ -60,6 +60,7 @@
             <li><a href="#services" onclick="hideMenu()">Services</a></li>
             <li><a href="#about-us" onclick="hideMenu()">About</a></li>
             <li><a href="#reviews" onclick="hideMenu()">Reviews</a></li>
+            <li id="navUpdates" hidden><a href="#updates" onclick="hideMenu()">Updates</a></li>
             <li><a href="#faqs" onclick="hideMenu()">FAQs</a></li>
             <li><a href="#contact-us" onclick="hideMenu()">Contact</a></li>
         </ul>
@@ -214,7 +215,7 @@
             <p>We strongly believe routine maintenance prolongs the life of your entire system. <em>Residential heating systems only.</em></p>
             <p>We are also certified backflow testers and handle all required paperwork with the City of San Francisco. Over 15 years of backflow testing and repair experience.</p>
             <!-- CTA inside about -->
-            <a href="tel:4159006254" class="about-cta">(415) 900-6254 &nbsp;—&nbsp; Call or Text to Schedule</a>
+            <a href="tel:4159006254" class="about-cta" data-cms-href="tel"><span data-cms-text="phone">(415) 900-6254</span> &nbsp;&middot;&nbsp; Call or Text to Schedule</a>
         </div>
     </div>
 </section>
@@ -297,6 +298,28 @@
 
 </section>
 
+<!-- ===== DIVIDER (shows only when there are updates) ===== -->
+
+<div class="ornament-break" id="updatesDivider" hidden>
+    <span class="ob-line"></span>
+    <span class="ob-center">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <span class="ob-line"></span>
+</div>
+
+<!-- ===== NEWS & UPDATES (posts come from content/updates.json) ===== -->
+
+<section class="updates" id="updatesSection" aria-labelledby="updates" hidden>
+    <div class="section-header animate-up">
+        <p class="eyebrow">From the Shop</p>
+        <h1 id="updates">News &amp; Updates</h1>
+        <div class="gold-rule centered"></div>
+    </div>
+    <div class="updates-list" id="updatesList"></div>
+    <div class="updates-more" id="updatesMore" hidden>
+        <button type="button" class="cta-btn">Show Older Updates &darr;</button>
+    </div>
+</section>
+
 <!-- ===== DIVIDER ===== -->
 
 <div class="ornament-break">
@@ -346,7 +369,7 @@
     <!-- CTA below FAQ -->
     <div class="section-cta animate-up">
         <p>Still have questions? We're happy to help.</p>
-        <a href="mailto:steamandhotwater@gmail.com" class="cta-btn">Email Us Directly &rarr;</a>
+        <a href="mailto:steamandhotwater@gmail.com" class="cta-btn" data-cms-href="mailto">Email Us Directly &rarr;</a>
     </div>
 </section>
 
@@ -372,24 +395,26 @@
                 <div class="contact-card-icon"><i class="fa-solid fa-building"></i></div>
                 <h3>The Steam and Hot Water Company</h3>
                 <address>
-                    <p>60 29th St, #323<br>San Francisco, CA 94110<br>License #1123889</p>
-                    <p><a class="phone" href="tel:4159006254">(415) 900-6254</a></p>
-                    <p><a class="email" href="mailto:steamandhotwater@gmail.com">steamandhotwater@gmail.com</a></p>
+                    <p><span data-cms-text="street">60 29th St, #323</span><br><span data-cms-text="city">San Francisco</span>, <span data-cms-text="state">CA</span> <span data-cms-text="zip">94110</span><br>License #<span data-cms-text="license">1123889</span></p>
+                    <p><a class="phone" href="tel:4159006254" data-cms-href="tel" data-cms-text="phone">(415) 900-6254</a></p>
+                    <p><a class="email" href="mailto:steamandhotwater@gmail.com" data-cms-href="mailto" data-cms-text="email">steamandhotwater@gmail.com</a></p>
                 </address>
             </div>
             <div class="contact-card animate-up" data-delay="2">
                 <div class="contact-card-icon"><i class="fa-regular fa-clock"></i></div>
                 <h3>Hours of Operation</h3>
-                <p class="hours-row"><span>Tuesday</span><span>8:00 am – 4:00 pm</span></p>
-                <p class="hours-row"><span>Wednesday</span><span>8:00 am – 4:00 pm</span></p>
-                <p class="hours-row"><span>Thursday</span><span>8:00 am – 4:00 pm</span></p>
-                <p class="hours-row"><span>Friday</span><span>8:00 am – 4:00 pm</span></p>
+                <div id="hoursList">
+                    <p class="hours-row"><span>Tuesday</span><span>8:00 am – 4:00 pm</span></p>
+                    <p class="hours-row"><span>Wednesday</span><span>8:00 am – 4:00 pm</span></p>
+                    <p class="hours-row"><span>Thursday</span><span>8:00 am – 4:00 pm</span></p>
+                    <p class="hours-row"><span>Friday</span><span>8:00 am – 4:00 pm</span></p>
+                </div>
             </div>
         </div>
         <!-- Bottom CTA -->
         <div class="contact-bottom-cta animate-up">
-            <a href="mailto:steamandhotwater@gmail.com" class="hero-btn">Send Us an Email</a>
-            <a href="tel:4159006254" class="hero-btn-ghost">Call (415) 900-6254</a>
+            <a href="mailto:steamandhotwater@gmail.com" class="hero-btn" data-cms-href="mailto">Send Us an Email</a>
+            <a href="tel:4159006254" class="hero-btn-ghost" data-cms-href="tel">Call <span data-cms-text="phone">(415) 900-6254</span></a>
         </div>
     </div>
 </section>
@@ -400,12 +425,12 @@
     <div class="footer-top">
         <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
         <div class="footer-brand">The Steam &amp; Hot Water Company</div>
-        <div class="footer-sub">Est. 2004 &nbsp;&middot;&nbsp; San Francisco, CA &nbsp;&middot;&nbsp; Lic. #1123889</div>
+        <div class="footer-sub">Est. 2004 &nbsp;&middot;&nbsp; San Francisco, CA &nbsp;&middot;&nbsp; Lic. #<span data-cms-text="license">1123889</span></div>
     </div>
     <div class="footer-icons">
-        <a href="tel:4159006254" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
-        <a href="sms:4159006254" aria-label="Text us"><i class="fa-solid fa-comment-sms"></i></a>
-        <a href="mailto:steamandhotwater@gmail.com" aria-label="Email us"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:4159006254" aria-label="Call us" data-cms-href="tel"><i class="fa-solid fa-phone"></i></a>
+        <a href="sms:4159006254" aria-label="Text us" data-cms-href="sms"><i class="fa-solid fa-comment-sms"></i></a>
+        <a href="mailto:steamandhotwater@gmail.com" aria-label="Email us" data-cms-href="mailto"><i class="fa-solid fa-envelope"></i></a>
     </div>
     <div class="footer-bottom">
         <p class="credits">Logo by <a href="https://www.linkedin.com/in/abdiel-mendez">Abdiel Mendez</a> &nbsp;&middot;&nbsp; Website by <a href="https://whiskeyandwasabi.com" target="_blank" rel="noopener noreferrer">Whiskey and Wasabi</a></p>
@@ -415,44 +440,6 @@
 <!-- ===== JAVASCRIPT ===== -->
 
 <script>
-/* ---- Closure Notice: reads content/notice.json (editable in the CMS) ---- */
-(async function () {
-    const notice = document.getElementById("closureNotice");
-    const text   = document.getElementById("closureText");
-    if (!notice || !text) return;
-
-    let n;
-    try {
-        const res = await fetch("content/notice.json", { cache: "no-store" });
-        if (!res.ok) return;
-        n = await res.json();
-    } catch (e) { return; }
-
-    // Today's date in San Francisco time, as YYYY-MM-DD
-    const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles" }).format(new Date());
-
-    if (!n.enabled) return;
-    if (n.show_from && today < n.show_from) return;
-    if (n.hide_on && today >= n.hide_on) { notice.remove(); return; }
-
-    const isClosed = n.closed_from && today >= n.closed_from;
-    const label    = isClosed ? (n.label_during || n.label_before) : n.label_before;
-    const message  = isClosed ? (n.message_during || n.message_before) : n.message_before;
-    if (!message) return;
-
-    text.textContent = "";
-    if (label) {
-        const strong = document.createElement("strong");
-        strong.textContent = label + ":";
-        text.appendChild(strong);
-        text.appendChild(document.createTextNode(" "));
-    }
-    text.appendChild(document.createTextNode(message));
-
-    notice.hidden = false;
-    document.body.classList.add("has-notice");
-})();
-
 /* ---- Mobile Menu ---- */
 const navLinks = document.getElementById("navLinks");
 function showMenu() { navLinks.classList.add("open"); }
@@ -511,6 +498,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 </script>
+
+<!-- Content from the website editor (/admin) -->
+<script src="site-content.js"></script>
 
 </body>
 </html>
