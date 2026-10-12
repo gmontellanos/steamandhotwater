@@ -1,0 +1,138 @@
+# =============================================
+# THE STEAM & HOT WATER COMPANY: WEBSITE EDITOR SETTINGS (Decap CMS)
+# Before going live, replace the line marked CHANGE ME with the Worker URL.
+# =============================================
+
+backend:
+  name: github
+  repo: gmontellanos/steamandhotwater
+  branch: main
+  base_url: https://steamandhotwater-cms-auth.YOUR-SUBDOMAIN.workers.dev  # CHANGE ME: Cloudflare Worker URL, no trailing slash
+  commit_messages:
+    update: 'Website editor: update {{collection}} "{{slug}}"'
+    uploadMedia: 'Website editor: upload "{{path}}"'
+    deleteMedia: 'Website editor: delete "{{path}}"'
+
+site_url: https://steamandhotwater.com
+display_url: https://steamandhotwater.com
+logo_url: https://steamandhotwater.com/favicon.png
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: content
+    label: "Website Content"
+    description: "Make your changes, then click Publish. The live website updates within a few minutes."
+    editor:
+      preview: false
+    files:
+
+      # ---------- ANNOUNCEMENT BANNER ----------
+      - label: "Announcement Banner"
+        name: notice
+        file: content/notice.json
+        fields:
+          - { label: "Show the banner", name: enabled, widget: boolean, default: false,
+              hint: "Turn off to hide the banner right away." }
+          - { label: "Start showing on", name: show_from, widget: datetime, required: false,
+              format: "YYYY-MM-DD", date_format: "MMMM D, YYYY", time_format: false, picker_utc: true,
+              hint: "Leave blank to show it right away." }
+          - { label: "Heading before the closure", name: label_before, widget: string, required: false,
+              hint: "Short gold label, e.g. Closure Notice" }
+          - { label: "Message before the closure", name: message_before, widget: text }
+          - { label: "Closure starts on", name: closed_from, widget: datetime, required: false,
+              format: "YYYY-MM-DD", date_format: "MMMM D, YYYY", time_format: false, picker_utc: true,
+              hint: "On this date the banner switches to the 'during' message below. Leave blank to skip." }
+          - { label: "Heading during the closure", name: label_during, widget: string, required: false,
+              hint: "e.g. Now Closed" }
+          - { label: "Message during the closure", name: message_during, widget: text, required: false }
+          - { label: "Remove banner on", name: hide_on, widget: datetime, required: false,
+              format: "YYYY-MM-DD", date_format: "MMMM D, YYYY", time_format: false, picker_utc: true,
+              hint: "The banner disappears on its own starting this date (San Francisco time)." }
+
+      # ---------- CONTACT INFO & HOURS ----------
+      - label: "Contact Info & Hours"
+        name: contact
+        file: content/contact.json
+        fields:
+          - { label: "Phone number", name: phone, widget: string, hint: "Type it the way it should appear, e.g. (415) 900-6254" }
+          - { label: "Email", name: email, widget: string }
+          - { label: "Street address", name: street, widget: string }
+          - { label: "City", name: city, widget: string }
+          - { label: "State", name: state, widget: string }
+          - { label: "ZIP code", name: zip, widget: string }
+          - { label: "License number", name: license, widget: string, hint: "Numbers only, e.g. 1123889" }
+          - label: "Hours of operation"
+            name: hours
+            widget: list
+            summary: "{{fields.day}}: {{fields.time}}"
+            fields:
+              - { label: "Day", name: day, widget: string }
+              - { label: "Hours", name: time, widget: string, hint: "e.g. 8:00 am – 4:00 pm" }
+
+      # ---------- SERVICES & PRICING ----------
+      - label: "Services & Pricing"
+        name: pricing
+        file: content/pricing.json
+        fields:
+          - label: "Service cards"
+            name: services
+            widget: list
+            summary: "{{fields.title}}  {{fields.price}}"
+            hint: "Drag cards to change their order. Numbers (01, 02...) update automatically."
+            fields:
+              - { label: "Title", name: title, widget: string }
+              - label: "Icon"
+                name: icon
+                widget: select
+                default: wrench
+                options:
+                  - { label: "Wrench", value: wrench }
+                  - { label: "Water drop", value: droplet }
+                  - { label: "Price tag", value: tags }
+                  - { label: "Flame", value: flame }
+                  - { label: "Pressure gauge", value: gauge }
+                  - { label: "Faucet", value: faucet }
+                  - { label: "House", value: house }
+                  - { label: "Thermometer", value: thermometer }
+                  - { label: "Tools", value: tools }
+                  - { label: "Calendar", value: calendar }
+              - { label: "Price", name: price, widget: string, required: false,
+                  hint: "Include the $ sign, e.g. $200. Leave blank for a card without one price." }
+              - { label: "Price unit", name: unit, widget: string, required: false,
+                  hint: "e.g. hour, device, combo" }
+              - { label: "Description", name: description, widget: text, required: false }
+              - label: "Discount lines"
+                name: discounts
+                widget: list
+                required: false
+                summary: "{{fields.amount}}: {{fields.text}}"
+                fields:
+                  - { label: "Discount", name: amount, widget: string, hint: "e.g. 10% off" }
+                  - { label: "Applies to", name: text, widget: string, hint: "e.g. 3 or more devices" }
+              - { label: "Highlight this card", name: featured, widget: boolean, default: false,
+                  hint: "Gives the card a brighter gold border." }
+              - { label: "Corner ribbon", name: badge, widget: string, required: false,
+                  hint: "Small gold tag, e.g. Best Value. Leave blank for none." }
+
+      # ---------- NEWS & UPDATES ----------
+      - label: "News & Updates"
+        name: updates
+        file: content/updates.json
+        fields:
+          - label: "Posts"
+            name: posts
+            widget: list
+            add_to_top: true
+            summary: "{{fields.date}}: {{fields.title}}"
+            hint: "Newest posts show first. A post dated in the future stays hidden until that day. The 3 newest show on the page; older ones appear under 'Show older updates.'"
+            fields:
+              - { label: "Title", name: title, widget: string }
+              - { label: "Date", name: date, widget: datetime,
+                  format: "YYYY-MM-DD", date_format: "MMMM D, YYYY", time_format: false, picker_utc: true }
+              - { label: "Message", name: body, widget: text,
+                  hint: "Leave a blank line between paragraphs." }
+              - { label: "Photo (optional)", name: image, widget: image, required: false, choose_url: false }
+              - { label: "Photo description (optional)", name: image_alt, widget: string, required: false,
+                  hint: "Describe the photo for screen readers, e.g. New boiler installed in a Noe Valley home" }

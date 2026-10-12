@@ -1,0 +1,48 @@
+{
+  "services": [
+    {
+      "title": "Boiler Service & Repair",
+      "icon": "wrench",
+      "price": "$200",
+      "unit": "hour",
+      "description": "Full service and repair of steam and hydronic boiler systems throughout San Francisco.",
+      "discounts": [],
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "title": "Backflow Testing",
+      "icon": "droplet",
+      "price": "$125",
+      "unit": "device",
+      "description": "Certified backflow preventer testing with all City of San Francisco paperwork handled.",
+      "discounts": [],
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "title": "Volume Discounts",
+      "icon": "tags",
+      "price": "",
+      "unit": "",
+      "description": "",
+      "discounts": [
+        { "amount": "10% off", "text": "3 or more devices" },
+        { "amount": "15% off", "text": "8 or more devices" },
+        { "amount": "20% off", "text": "15 or more devices" }
+      ],
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "title": "Backflow + Boiler Combo",
+      "icon": "flame",
+      "price": "$300",
+      "unit": "combo",
+      "description": "One backflow test plus one hour of boiler service. Additional labor at regular rate.",
+      "discounts": [],
+      "featured": true,
+      "badge": "Best Value"
+    }
+  ]
+}

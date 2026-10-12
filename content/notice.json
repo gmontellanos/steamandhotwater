@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "show_from": "2026-10-12",
+  "label_before": "Closure Notice",
+  "message_before": "We will be closed November 1 to 30, 2026, and will reopen Tuesday, December 1.",
+  "closed_from": "2026-11-01",
+  "label_during": "Now Closed",
+  "message_during": "We are closed for the month of November and will reopen Tuesday, December 1, 2026.",
+  "hide_on": "2026-12-01"
+}

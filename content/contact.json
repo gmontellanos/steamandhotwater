@@ -1,0 +1,15 @@
+{
+  "phone": "(415) 900-6254",
+  "email": "steamandhotwater@gmail.com",
+  "street": "60 29th St, #323",
+  "city": "San Francisco",
+  "state": "CA",
+  "zip": "94110",
+  "license": "1123889",
+  "hours": [
+    { "day": "Tuesday", "time": "8:00 am – 4:00 pm" },
+    { "day": "Wednesday", "time": "8:00 am – 4:00 pm" },
+    { "day": "Thursday", "time": "8:00 am – 4:00 pm" },
+    { "day": "Friday", "time": "8:00 am – 4:00 pm" }
+  ]
+}
